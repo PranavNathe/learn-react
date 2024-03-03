@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
-import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, NavbarContent, NavbarItem, Link, Button} from "@nextui-org/react";
+import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, NavbarContent, NavbarItem, Button} from "@nextui-org/react";
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom'
 
 function Header() {
     const menuItems = [
@@ -35,17 +36,17 @@ function Header() {
           <p className="font-bold text-inherit">Your Logo</p>
         </NavbarBrand>
         <NavbarItem isActive>
-          <Link color="warning" href="/" >
+          <Link color="warning" to="/" >
           Home
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="about">
+          <Link color="foreground" to="about">
           About
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="contact">
+          <Link color="foreground" to="contact">
           Contact
           </Link>
         </NavbarItem>
@@ -84,8 +85,8 @@ function Header() {
               color={
                 index === 0 ? "warning" : index === menuItems.length - 1 ? "danger" : "foreground"
               }
-              href={item.url}
-              onClick={toastNoti}
+              to={item.url}
+              // onClick={toastNoti}
               size="lg"
             >
               {item.title}
